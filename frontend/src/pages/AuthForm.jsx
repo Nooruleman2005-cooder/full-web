@@ -30,7 +30,7 @@ const AuthForm = () => {
             toast.success(data.message);
 
             if (isLogin) {
-                navigate('/home'); 
+                navigate('/'); 
                 setIsLogin(true);
             }
         } catch (err) {

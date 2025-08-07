@@ -4,8 +4,11 @@ import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const AddProduct = () => {
+        const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -47,6 +50,13 @@ const AddProduct = () => {
 
             console.log('Product created:', res.data);
             toast.success('Product Added Successfully....');
+             setFormData({
+                name: '',
+                description: '',
+                price: '',
+                image: null
+            });
+            setTimeout(() => navigate('/'), 2000);
 
         } catch (err) {
             console.error('Error:', err);
