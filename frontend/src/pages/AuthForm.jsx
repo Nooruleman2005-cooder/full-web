@@ -26,10 +26,11 @@ const AuthForm = () => {
             if (data.jwtToken) {
                 localStorage.setItem('token', data.jwtToken);
             }
+             toast.success(data.message);
             setFormData({ name: '', email: '', password: '' });
-            toast.success(data.message);
+            console.log(data)
 
-            if (isLogin) {
+            if (isLogin ? '/login' : '/signup') {
                 navigate('/'); 
                 setIsLogin(true);
             }

@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
-  }, [location]); // runs on route change
+  }, [location]); 
 
   const handleLogout = () => {
     localStorage.removeItem("token");
